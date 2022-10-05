@@ -45,7 +45,8 @@ h3::after {
 }
 
 img {
-  max-width: 95%; /* para imagem não extourar a tela. Fica do tamanho exato da tela*/
+  max-width: 100%; /* para imagem não extourar a tela. Fica do tamanho exato da tela*/
+  display: block;
 }
 
 a {
@@ -76,7 +77,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   height: 8rem;
 }
 
@@ -97,8 +98,8 @@ p {
   display: grid;
   gap: 3rem;
   justify-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  padding: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
 }
 
 .introducao {
@@ -127,13 +128,17 @@ p {
   background-color: #900;
 }
 
+.introducao-cover img {
+  object-fit: cover;
+  height: 100%;
+}
+
 .subtitulo {
   display: grid;
   text-align: right;
   font-size: 64px;
   color: #6e6e6e;
   align-self: center;
-  padding: 2rem;
 }
 
 .vantagem {
@@ -170,4 +175,42 @@ p {
   position: relative;
   bottom: 30px;
   /* box-sizing: border-box; */
+}
+
+@media (max-width: 1000px) {
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .subtitulo {
+    text-align: start;
+    font-size: 3rem;
+  }
+
+  .vantagem {
+    padding: 0px;
+  }
+
+  .footer {
+    margin-top: 3rem;
+  }
+
+  .introducao {
+    justify-items: center;
+    text-align: start;
+  }
+
+  .introducao h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .subtitulo {
+    font-size: 2rem;
+  }
+
+  .menu {
+    height: 14rem;
+  }
 }
